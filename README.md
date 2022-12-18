@@ -14,7 +14,17 @@ To start the game, you will have to create an account. There is a basic level of
 
 ![Alt text](imgs/login.png?raw=true "Game Play")
 
-The 4 main recycling categories are Metal, Plastic, Paperand Glass. Dragging the trash into the correct recycling bin will earn points while dragging to the wrong bin will have point penalty.There are a total of 6 stages. To progress to the next stage, you will need to earn minimum pointsof(5, 12, 21, 32, 45, 60)from stage 1 to 6.As the stage progress, the items will appear more often and disappear quicker. This helps to train the players’ judgement of the item’s recycling category.
+The 4 main recycling categories are Metal, Plastic, Paperand Glass. Dragging the trash into the correct recycling bin will earn points while dragging to the wrong bin will have point penalty.There are a total of 6 stages.
+
+![Alt text](imgs/minimum_score.png?raw=true "Game Play")
+
+ To progress to the next stage, you will need to earn minimum pointsof(5, 12, 21, 32, 45, 60)from stage 1 to 6.As the stage progress, the items will appear more often and disappear quicker. This helps to train the players’ judgement of the item’s recycling category.
+
+![Alt text](imgs/high_score.png?raw=true "Game Play")
+
+**Sign up and compete with your friends!**
+
+
 
 
 # **IMPORTANT**

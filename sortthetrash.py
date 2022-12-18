@@ -55,10 +55,10 @@ class DataBase():
     """Class to provide data management for the application.
     The class manages the connection to the Firebase using libdw module."""
     def __init__(self):
-        dburl = ""
-        email = ""
-        password = ""
-        apikey = ""
+        dburl = "https://ctd-1d-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        email = "recycle@recycle.com"
+        password = "password" 
+        apikey = "AIzaSyDxZk5Ob5xYRUORSodpyY_E3BmWUOXu8DM"
         authdomain = dburl.replace("https://","")
 
         config = {
