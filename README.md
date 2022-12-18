@@ -12,7 +12,7 @@ The software is played as a single player game and players will need to drag ran
 
 To start the game, you will have to create an account. There is a basic level of authentication checks for this project.  
 
-![Alt text](imgs/login.png?raw=true "Game Play")
+![Alt text](imgs/game_play.png?raw=true "Game Play")
 
 The 4 main recycling categories are Metal, Plastic, Paperand Glass. Dragging the trash into the correct recycling bin will earn points while dragging to the wrong bin will have point penalty.There are a total of 6 stages.
 
