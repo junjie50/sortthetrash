@@ -1,0 +1,256 @@
+Module sortthetrash
+===================
+10.014 Computational Design Thinking 2022 Singapore University of Technology and Design.
+This game was developed to help singaporean to increase the awareness of recycling.
+Team1A
+@Author: Cai JunJie(1006918), Du Bowei(1006633), Hsieh Chia Tang(1007200), Goh Qian Zhe(1003430), Lim Kyuha(1006615)
+
+Tested the code on Python 3.10.8 Macos
+
+Classes
+-------
+
+`DataBase()`
+:   Class to provide data management for the application.
+    The class manages the connection to the Firebase using libdw module.
+
+    ### Methods
+
+    `get_high_score(self)`
+    :   The function returns the high score retrieved from the database.
+
+    `get_key(self, key)`
+    :   Returns the value associated with key from the databse.
+        
+        Args:
+            key: the identifier in the database.
+        
+        Returns:
+            Value of key in database and None if key is not in the database.
+
+    `get_minimum_score()`
+    :   The function returns a list the minimum score required to advance for each stage. Starting
+        from stage 1 and maximum 10.
+        
+        Returns:
+            [score1, score2...]
+
+    `get_pictures()`
+    :   The function returns the picture locations of the different recycling category.
+        
+        Returns:
+            item_picture: Location of item pictures locally.
+            bin_pictures: Location of bin pictures locally.
+
+    `get_record_holder(self)`
+    :   The function returns the record holder username retrieved from the database.
+
+    `set_key(self, key, data)`
+    :   Set the value of key to be data in the database.
+        
+        Args:
+            key: The key of the data.
+            data: The value associated with key.
+
+    `update_high_score(self, score)`
+    :   The function to update the high score in the database.
+        
+        Args:
+            score: The score to be used to update the database.
+
+    `update_record_holder(self, user)`
+    :   The function to update the record holder in the database.
+        
+        Args:
+            user: The username of the player who achieved the new high score.
+
+`GameControl()`
+:   Class to manage the data of the current game and interaction with data base.
+
+    ### Methods
+
+    `able_to_advance(self)`
+    :   Check if the player is able to advance to the next stage.
+
+    `authenticate(self, username, password)`
+    :   Authenticates the login details of the user. Stores the detail of user upon successful login.
+        
+        Args:
+            username, password
+        
+        Returns:
+        True if username and password are valid else False
+
+    `create_user(self, username, password)`
+    :   Create the user in the database.
+        
+        Args:
+            username, password
+
+    `final_page(self)`
+    :   Check if the player is at the final stage of the game.
+
+    `get_curr_user(self)`
+    :   Return the curr user that is playing the game.
+
+    `get_game_duration(self)`
+    :   Returns the gmae duration of the current game.
+
+    `get_high_score(self)`
+    :   Returns the high_score retried from the database API.
+
+    `get_item_duration(self)`
+    :   Returns the item duration of the current game.
+
+    `get_item_interval(self)`
+    :   Returns the item interval of the current game.
+
+    `get_key(self, key)`
+    :   Returns the value associated with key. None is returned if key is not in database.
+
+    `get_min_score(self)`
+    :   Returns the minimum score required to advance to the next stage of the game..
+
+    `get_record_holder(self)`
+    :   Returns the record_holder retried from the database API.
+
+    `get_score(self)`
+    :   Returns the score of the current game.
+
+    `get_stage(self)`
+    :   Returns the current stage of the game.
+
+    `get_time(self)`
+    :   Return the game time of the game.
+
+    `increase_score(self, incre=1)`
+    :   Increase the score of the current game by 1 (default).
+        
+        args:
+            increment: Default value is 1
+
+    `increase_stage(self)`
+    :   Increase the difficulty after each stage. 
+        Item will appear faster after every stage and disappear quicker.
+
+    `reset(self)`
+    :   Reset the game data for a new game play.
+
+    `update_high_score(self)`
+    :   Updates the high score of the game. Records the high score and the username to the database.
+
+`GameView(game)`
+:   The GamePlay Class manages the view and interaction of users by 
+    interacting with the GameModel class
+    
+    Return a new Toplevel widget on screen SCREENNAME. A new Tcl interpreter will
+    be created. BASENAME will be used for the identification of the profile file (see
+    readprofile).
+    It is constructed from sys.argv[0] without extensions if None is given. CLASSNAME
+    is the name of the widget class.
+
+    ### Ancestors (in MRO)
+
+    * tkinter.Tk
+    * tkinter.Misc
+    * tkinter.Wm
+
+    ### Methods
+
+    `billboard(self)`
+    :   Provides the leaderboard dispaly for the game.
+
+    `clear_frame(self)`
+    :   Reset tkinter display and music. Used before every change of display.
+
+    `countdown(self, time, time_left)`
+    :   Function to decrease the timer. Once time is up, direct player to staging area.
+
+    `create_game_play(self)`
+    :   Creates the game graphics and user interaction.
+
+    `create_main_menu(self)`
+    :   Main menu display of the game.
+
+    `create_setting_button(self, colour, filename='setting_button.png')`
+    :   Creates the setting button for the application on the top right hand corner.
+
+    `drag(self, event)`
+    :   Helps to animate the drag motion.
+
+    `enter_bin(self, event)`
+    :   UI for bin. Upon mouse entering bin, change the background colour of the bin.
+
+    `fail_area(self)`
+    :   Creates the graphics in the event that a player fails to advance to the next stage.
+
+    `game_font(self, x)`
+    :
+
+    `generate_random_item(self)`
+    :   Function to generate random items around the map.
+
+    `help_page(self)`
+    :   Help display to provide instructions for the game.
+
+    `leave_bin(self, event)`
+    :   UI for bin. Upon mouse leaving bin, change the background colour of the bin.
+
+    `login_page(self)`
+    :   Provides the login display for the user.
+
+    `on_drag_start(self, event)`
+    :   Helps to animate the drag motion.
+
+    `on_drop(self, event, category)`
+    :   Function to update the score after dropping the item at the bin.
+
+    `play_sound(self)`
+    :   Plays the background music. Only works for windows as winsound is used.
+
+    `register_page(self)`
+    :   Provides the display for users to register their account.
+
+    `result_page(self)`
+    :   Result page of the game after completing all the stages.
+
+    `staging_area(self)`
+    :   Area used to stage players after completing a stage.
+        Players will be directed to fail stage and result stage
+        accordingly.
+
+    `start_game(self)`
+    :   Starting the next stage. Clears the current frame and create a new frame for the next game.
+
+    `stop_sound(self)`
+    :   Stops the background music. Only works on windows as winsound is used.
+
+`Utility()`
+:   Class to provide utility function for the application such as joining the file paths and password hashing.
+
+    ### Methods
+
+    `alert(text)`
+    :   Alert function for the application.
+        
+        Args:
+            text: Message to be shown to the user.
+
+    `join_class_path(*args)`
+    :   Joining class path regardless of operating system.
+        
+        Args:
+            (path1, path2, path3...)
+        
+        Returns:
+            path1/path2/path3 (Unix)
+            path1\path2\path3 (Windows)
+
+    `password_hash(password)`
+    :   To hash the password for safe storage in database.
+        
+        Args:
+            password: length > 0
+        
+        Returns:
+            The hashed value from hashing the password.
